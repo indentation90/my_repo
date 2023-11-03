@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Navbar from "./components/Navbar";
 const profil = () =>{
 
@@ -8,5 +9,10 @@ const profil = () =>{
     </>
     );
 }
+=======
+const profil =() => {
+    return <div>profil</div>;
+};
+>>>>>>> f19e247be86fd26e7068835e4575082a7c6db109
 
 export default profil;
