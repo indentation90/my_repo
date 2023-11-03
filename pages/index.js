@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <>
     <Navbar/>
-    home
+    <h1>Ini halaman Home</h1>
+    
     </>
   );
 };
