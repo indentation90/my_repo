@@ -1,18 +1,33 @@
-<<<<<<< HEAD
+import Head from "next/head";
 import Navbar from "./components/Navbar";
-const profil = () =>{
 
-    return (
+const Profil = ({ albums }) => {
+  return (
     <>
-        <Navbar/>
-        <h1>Ini halaman profil</h1>
+      <Head>
+        <title>Profil | Belajar Next JS</title>
+        <meta name="description" content="Belajar Next JS" />
+      </Head>
+      <Navbar />
+      <h1>Ini halaman Profil</h1>
+      {albums.map((album) => (
+        <div key={album.id}>
+          <h2>{album.title}</h2>
+        </div>
+      ))}
     </>
-    );
-}
-=======
-const profil =() => {
-    return <div>profil</div>;
+  );
 };
->>>>>>> f19e247be86fd26e7068835e4575082a7c6db109
 
-export default profil;
+export default Profil;
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/albums");
+  const data = await res.json();
+
+  return {
+    props: {
+      albums: data,
+    },
+  };
+};
